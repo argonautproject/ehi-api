@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Update the image to the latest publisher
+        uses: docker://hl7fhir/ig-publisher-base:latest
+        with:
+          args: ./_updatePublisher.sh --force
+
+      - name: Run the IG publisher
+        uses: docker://hl7fhir/ig-publisher-base:latest
+        with:
+          args: ./_genonce.sh
+          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
