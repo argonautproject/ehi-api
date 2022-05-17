@@ -1,0 +1,53 @@
+@startuml
+
+group "Single EHR"
+Patient -> "Portal / Form":  EHI API Request
+deactivate Patient
+activate "Portal / Form"
+"Portal / Form" -> EHR: Filtered Data Request
+EHR -> "HIM Dept": Data for Review
+deactivate "Portal / Form"
+activate "HIM Dept"
+"HIM Dept" -> Patient: EHI API Response
+deactivate "HIM Dept"
+end 
+
+group "Federated by Primary EHR"
+Patient -> "Portal / Form": EHI API Request
+activate "Portal / Form"
+"Portal / Form" -> EHR: Filtered Data Request
+EHR -> "EHR 2": Internal EHI API Request
+deactivate "Portal / Form"
+"EHR 2" -> EHR: Data
+EHR -> "HIM Dept": Data for Review
+activate "HIM Dept"
+"HIM Dept" ->Patient: EHI API Response
+deactivate "HIM Dept"
+end 
+
+group "Federated by Portal"
+Patient -> "Portal / Form": EHI API Request
+activate "Portal / Form"
+"Portal / Form" -> EHR:  Internal EHI API Request
+"Portal / Form" -> "EHR 2":  Internal EHI API Request
+deactivate "Portal / Form"
+EHR -> "HIM Dept": Data for Review
+activate "HIM Dept"
+"EHR 2" -> "HIM Dept": Data for Review
+"HIM Dept" -> Patient: EHI API Response
+deactivate "HIM Dept"
+end
+
+group "Federated by HIM Staff"
+activate Patient
+Patient -> "HIM Dept": Online or PDF Form
+"HIM Dept" -> EHR:  Internal EHI API Request
+deactivate Patient
+"HIM Dept" -> "EHR 2":  Internal EHI API Request
+EHR -> "HIM Dept": Data for review
+activate "HIM Dept"
+"EHR 2" -> "HIM Dept": Data for Review
+"HIM Dept" -> Patient: Data
+deactivate "HIM Dept"
+end
+@enduml
