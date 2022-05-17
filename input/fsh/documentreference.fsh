@@ -6,11 +6,17 @@ Description: "Profile for `DocumentReference` resources provided as metadata for
 * meta.tag 1.. 
 * meta.tag = #ehi-export "generated as part of an ehi-export request"
 * description ..1 
-* description ^short = "Should be populated if possible. Human-readable description."
+* description ^short = "Should be populated if possible. How to process the file (e.g., links to data dictionary or developer documentation)."
 * content.format ..1
-* content.format ^short = "Should be populated if possible. Format/content rules for the document."
+* content.format ^short = "Should be populated if possible. Vendor-specific for the provided data format, so clients can apply consistent processing."
+* content.format.system 1..1
+* content.format.system ^short = "URL for the vendor's EHI Export documentation"
+* content.format.code 1..1
+* content.format.code ^short = "Code specific to the file's format"
+* content.format.display ..1
+* content.format.display ^short = "Human-readable descriptor for the file's format"
 * content.attachment.contentType ..1
-* content.attachment.contentType ^short = "Should be populated if possible. Mime type of the content, with charset etc."
+* content.attachment.contentType ^short = "Should be populated if possible. Mime type of the content."
 * content.attachment.size ..1
 * content.attachment.size ^short = "Should be populated if possible. Number of bytes of content."
 

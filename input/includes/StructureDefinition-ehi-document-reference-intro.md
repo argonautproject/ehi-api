@@ -1,0 +1,1 @@
+EHI Servers are encouraged to make use of `DocumentReference` properties and FHIR extensions in addition to those highlighted in this profile to incorporate any other relevant metadata about the files being referenced, such as their creation date or number of pages.

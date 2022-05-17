@@ -73,7 +73,7 @@ Each `DocumentReference` returned SHOULD contain:
   * `meta.tag` with a code of `ehi-export` to indicate that this file is not accessible through other FHIR APIs
   * `description` explaining how to process the file (e.g., links to data dictionary or developer documentation)
   * `content.format` providing a vendor-specific code for this data format, so clients can apply consistent processing to other files of the same format 
-    * `system` is a URL for the vendor's EHI Export documentation and
+    * `system` is a URL for the vendor's EHI Export documentation
     * `code` is particular to this file's format
     * `display` is a human-readable descriptor for this file's format
   * `content.attachment.contentType` with a MIME type for the content (e.g., `text/csv`) 
