@@ -26,3 +26,4 @@ As defined in section 170.315(b)(10) of the 21st Century Cures Act Rules, this e
 ### Resources
 
 * [EHI Export Operation](ehi-export.html)
+* [Mockup of App Flow](https://docs.google.com/presentation/d/1-c6GcXrexCJhYzcmnQwbVuooZInG8ONfNyFbDzfFzyg/edit?usp=sharing)
