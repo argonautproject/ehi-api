@@ -5,6 +5,10 @@ Description: "Profile for `DocumentReference` resources provided as metadata for
 * meta 1..
 * meta.tag 1.. 
 * meta.tag = #ehi-export "generated as part of an ehi-export request"
+* meta.tag ^slicing.discriminator.type = #pattern
+* meta.tag ^slicing.discriminator.path = "$this"
+* meta.tag ^slicing.rules = #open
+* meta.tag ^short = "EHI Tag"
 * description ..1 
 * description ^short = "Should be populated if possible. How to process the file (e.g., links to data dictionary or developer documentation)."
 * content.format ..1

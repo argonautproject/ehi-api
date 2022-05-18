@@ -4,9 +4,9 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ehi.api
-canonical: http://argonaut.fhir.us/ehi-api
-name: EHI API
-title: EHI API IG
+canonical: http://fhir.org/argonaut/ehi-api
+name: EHI Export API
+title: EHI Export API IG
 description: Argonaut 2022 project to define an API that a patient or authorized user can use to retrieve the patient's electronic health information from a clinical system.
 status: draft # draft | active | retired | unknown
 version: 0.1.0
@@ -47,7 +47,7 @@ pages:
   index.md:
     title: Home
   ehi-export.md:
-    title: EHI Export
+    title: EHI Export Operation
 
 #
 #
