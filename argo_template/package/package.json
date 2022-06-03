@@ -1,0 +1,11 @@
+{
+  "name": "argo_template",
+  "version": "0.1",
+  "type": "fhir.template",
+  "license": "CC0-1.0",
+  "description": "Argonaut Project Template which include the project logo and some css to change the navbar and footer colors",
+  "base": "fhir.base.template",
+  "dependencies": {
+    "fhir.base.template": "current"
+  }
+}
