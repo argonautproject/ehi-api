@@ -4,6 +4,8 @@ Systems providing the EHI Export API (EHI Servers) SHALL support the [SMART App 
 
 EHI Servers that also support use by internal applications at a healthcare institution SHALL support the [SMART Backend Services](https://hl7.org/fhir/smart-app-launch/backend-services.html) flow with a scope of `system/$ehi-export` for apps to obtain an access token to use in the EHI export operation described below. If the internal application is user facing, it SHOULD ensure that the user of the application has been authenticated and is authorized to access the data prior to making an export request on their behalf.
 
+EHI Servers SHALL enable CORS support to ensure that web-based applications can access EHI API Endpoints and can access the `Content-Location` and `Link` headers.
+
 ### API
 
 This API builds on the [FHIR Asynchronous Bulk Data Request Pattern](https://build.fhir.org/async-bulk.html) (Async Pattern). Unless otherwise noted, http requests, responses, and other elements of that pattern described in the FHIR documentation apply to the `ehi-export` operation API described below.
