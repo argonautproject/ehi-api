@@ -43,13 +43,16 @@ Note that the export job may encompass manual steps such as HIM staff review, in
 
 #### Status Response - complete
 
-Upon completion of the export job, the EHI Server SHALL return a status of `200 OK` and a JSON manifest described in the Async Pattern. 
+Upon completion of the export job, the EHI Server SHALL return a status of `200 OK` and a JSON manifest described in the Async Pattern. The EHI Server SHOULD include a link to any top-level public documentation available for interpreting the contents of the export using an `"extension"` with an `"ehiDocumentationUrl"` property (see example below).
 
 Example manifest:
 ```json
 {
   "transactionTime": "[instant]",
   "requiresAccessToken" : true,
+  "extension": {
+    "ehiDocumentationUrl": "https://vendor.example.com/docs/cures-ehi/v2.0.1"
+  },
   "output" : [{
     "type" : "Patient",
     "url" : "http://serverpath2/patient.ndjson"
@@ -99,7 +102,7 @@ Example `DocumentReference` (this would appear as a single minified line in an N
   "description": "Demographic information not included in Patient resource, described at http://vendor.example.com/docs/cures-ehi-demographics.html",
   "content": [{
     "attachment": {
-      "url": "http://server.example.org/patient_file_1.csv",
+      "url": "https://server.example.org/patient_file_1.csv",
       "contentType": "text/csv"
     },
     "format": {
