@@ -4,4 +4,4 @@ The ONC Final Rule regulating the 21st Century Cures Act requires certified EHR 
 
 To empower patients to leverage apps across all of the data in their medical record, this implementation guide defines a standards-based API to access this EHI information integrated with the existing regulatory mandated patient-facing FHIR APIs that encompass the USCDI data set.
 
-The continuous build for EHI Export API IG version 0.1.0 is published here: http://build.fhir.org/ig/argonautproject/ehi-api/
+The continuous build for EHI Export API IG version 0.1.0 is published at http://build.fhir.org/ig/argonautproject/ehi-api/
